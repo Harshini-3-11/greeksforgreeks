@@ -1,0 +1,30 @@
+
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) {
+        Scanner  sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            Integer arr[]=new Integer [n];
+            for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+            }
+            Arrays.sort(arr,(a,b)->{
+                int setA=Integer.bitCount(a);
+                int setB=Integer.bitCount(b);
+                int parityA=setA%2;
+                int parityB=setB%2;
+
+            
+            if(parityA!=parityB)
+                return parityA-parityB;
+                return a-b;
+            });
+            for(int x:arr){
+                System.out.print(x+" ");
+            }
+            System.out.println();
+        }
+    }
+}
